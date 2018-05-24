@@ -261,6 +261,8 @@ namespace Mehdime.Entity
                 try
                 {
                     dbContext.Dispose();
+
+                    _dbContextFactory?.Release(dbContext);
                 }
                 catch (Exception e)
                 {
